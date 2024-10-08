@@ -19,7 +19,6 @@
 		D18B33C22CB540C300E1C5A7 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D18B33C12CB540C300E1C5A7 /* IQKeyboardManagerSwift */; };
 		D18B33C52CB540D200E1C5A7 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D18B33C42CB540D200E1C5A7 /* Toast */; };
 		D18B33C62CB5412700E1C5A7 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D18B33B72CB53E1100E1C5A7 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D18B33CA2CB5415D00E1C5A7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33C92CB5415D00E1C5A7 /* APIKey.swift */; };
 		D18B33CC2CB5425100E1C5A7 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33CB2CB5425100E1C5A7 /* NetworkManger.swift */; };
 		D18B33CF2CB5458800E1C5A7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33CE2CB5458800E1C5A7 /* Color+Extension.swift */; };
 		D18B33D22CB5471100E1C5A7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33D12CB5471100E1C5A7 /* Repository.swift */; };
@@ -35,6 +34,7 @@
 		D18B33F42CB54BE400E1C5A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33F32CB54BE400E1C5A7 /* BaseViewController.swift */; };
 		D18B33F72CB54DB000E1C5A7 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33F62CB54DB000E1C5A7 /* ReuseIdentifier.swift */; };
 		D18B33FA2CB557A000E1C5A7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33F92CB557A000E1C5A7 /* Image.swift */; };
+		D18B33FE2CB560AF00E1C5A7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33FD2CB560AF00E1C5A7 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +59,6 @@
 		D18B33A32CB52DF200E1C5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D18B33A52CB52DF200E1C5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D18B33AB2CB52E2F00E1C5A7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		D18B33C92CB5415D00E1C5A7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		D18B33CB2CB5425100E1C5A7 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		D18B33CE2CB5458800E1C5A7 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D18B33D12CB5471100E1C5A7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		D18B33F32CB54BE400E1C5A7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D18B33F62CB54DB000E1C5A7 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		D18B33F92CB557A000E1C5A7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D18B33FD2CB560AF00E1C5A7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D18B33CB2CB5425100E1C5A7 /* NetworkManger.swift */,
-				D18B33C92CB5415D00E1C5A7 /* APIKey.swift */,
+				D18B33FD2CB560AF00E1C5A7 /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -411,9 +411,9 @@
 				D18B33E72CB548EC00E1C5A7 /* LikeViewModel.swift in Sources */,
 				D18B33EA2CB548F700E1C5A7 /* DetailViewModel.swift in Sources */,
 				D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */,
-				D18B33CA2CB5415D00E1C5A7 /* APIKey.swift in Sources */,
 				D18B33EE2CB5490F00E1C5A7 /* DetailViewController.swift in Sources */,
 				D18B339A2CB52DF000E1C5A7 /* SceneDelegate.swift in Sources */,
+				D18B33FE2CB560AF00E1C5A7 /* APIKey.swift in Sources */,
 				D18B33E32CB548D900E1C5A7 /* LikeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
