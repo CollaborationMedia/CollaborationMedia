@@ -8,12 +8,25 @@
 import UIKit
 
 enum Image {
-    static let play = UIImage(systemName: "play")
-    static let magnifyingglass = UIImage(systemName: "magnifyingglass")
-    static let sparklesTV = UIImage(systemName: "sparkles.tv")
-    static let house = UIImage(systemName: "house")
-    static let playCircle = UIImage(systemName: "play.circle")
-    static let squareAndArrowDown = UIImage(systemName: "square.and.arrow.down")
-    static let faceSmiling = UIImage(systemName: "face.smiling")
-    static let plus = UIImage(systemName: "plus")
+    case play
+    case magnifyingglass
+    case sparklesTV
+    case house
+    case playCircle
+    case squareAndArrowDown
+    case faceSmiling
+    case plus
+    
+    var rawValue: UIImage? {
+        switch self {
+        case .play: UIImage(systemName: "play.fill")
+        case .magnifyingglass: UIImage(systemName: "magnifyingglass")
+        case .sparklesTV: UIImage(systemName: "sparkles.tv")
+        case .house: UIImage(systemName: "house.fill")
+        case .playCircle: UIImage(systemName: "play.circle")
+        case .squareAndArrowDown: UIImage(systemName: "square.and.arrow.down")
+        case .faceSmiling: UIImage(systemName: "face.smiling")
+        case .plus: UIImage(systemName: "plus")
+        }
+    }
 }

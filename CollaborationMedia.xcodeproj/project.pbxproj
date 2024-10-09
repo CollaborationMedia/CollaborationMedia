@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */; };
+		BC85E8352CB60E0C00531B60 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */; };
 		D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33972CB52DF000E1C5A7 /* AppDelegate.swift */; };
 		D18B339A2CB52DF000E1C5A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33992CB52DF000E1C5A7 /* SceneDelegate.swift */; };
 		D18B33A12CB52DF200E1C5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18B33A02CB52DF200E1C5A7 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		D18B33F72CB54DB000E1C5A7 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33F62CB54DB000E1C5A7 /* ReuseIdentifier.swift */; };
 		D18B33FA2CB557A000E1C5A7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33F92CB557A000E1C5A7 /* Image.swift */; };
 		D18B34002CB565B900E1C5A7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33FF2CB565B900E1C5A7 /* APIKey.swift */; };
+		D18B34022CB609DD00E1C5A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B34012CB609DD00E1C5A7 /* CustomButton.swift */; };
+		D18B34042CB6138E00E1C5A7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D18B34032CB6138E00E1C5A7 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		D18B33942CB52DF000E1C5A7 /* CollaborationMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollaborationMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B33972CB52DF000E1C5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18B33992CB52DF000E1C5A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		D18B33F62CB54DB000E1C5A7 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		D18B33F92CB557A000E1C5A7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D18B33FF2CB565B900E1C5A7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D18B34012CB609DD00E1C5A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D18B34032CB6138E00E1C5A7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		D18B338B2CB52DF000E1C5A7 = {
 			isa = PBXGroup;
 			children = (
+				D18B34032CB6138E00E1C5A7 /* .swiftlint.yml */,
 				D18B33AB2CB52E2F00E1C5A7 /* .gitignore */,
 				D18B33962CB52DF000E1C5A7 /* CollaborationMedia */,
 				D18B33952CB52DF000E1C5A7 /* Products */,
@@ -162,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D18B33CE2CB5458800E1C5A7 /* Color+Extension.swift */,
+				BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -279,6 +289,8 @@
 			children = (
 				D18B33F02CB54B9F00E1C5A7 /* Base */,
 				D18B33F12CB54BD900E1C5A7 /* TabBarController.swift */,
+				BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */,
+				D18B34012CB609DD00E1C5A7 /* CustomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -384,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18B34042CB6138E00E1C5A7 /* .swiftlint.yml in Resources */,
 				D18B33AC2CB52E2F00E1C5A7 /* .gitignore in Resources */,
 				D18B33A12CB52DF200E1C5A7 /* Assets.xcassets in Resources */,
 				D18B33A42CB52DF200E1C5A7 /* Base in Resources */,
@@ -398,7 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18B33D22CB5471100E1C5A7 /* Repository.swift in Sources */,
+				D18B34022CB609DD00E1C5A7 /* CustomButton.swift in Sources */,
 				D18B33FA2CB557A000E1C5A7 /* Image.swift in Sources */,
+				BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */,
 				D18B33F22CB54BD900E1C5A7 /* TabBarController.swift in Sources */,
 				D18B33E02CB548CC00E1C5A7 /* SearchViewController.swift in Sources */,
 				D18B33D62CB5486800E1C5A7 /* TrendingViewController.swift in Sources */,
@@ -413,6 +428,7 @@
 				D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */,
 				D18B33EE2CB5490F00E1C5A7 /* DetailViewController.swift in Sources */,
 				D18B339A2CB52DF000E1C5A7 /* SceneDelegate.swift in Sources */,
+				BC85E8352CB60E0C00531B60 /* UIImage+Extension.swift in Sources */,
 				D18B34002CB565B900E1C5A7 /* APIKey.swift in Sources */,
 				D18B33E32CB548D900E1C5A7 /* LikeViewController.swift in Sources */,
 			);
