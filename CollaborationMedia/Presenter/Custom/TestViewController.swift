@@ -10,8 +10,8 @@ import SnapKit
 
 final class TestViewController: UIViewController {
  
-    let posterImageView = PosterImageView(width: ScreenSize.width - 40,
-                                          height: ScreenSize.height * 0.3,
+    let posterImageView = PosterImageView(width: 80,
+                                          height: 120,
                                           image: Image.squareAndArrowDown)
     
     override func viewDidLoad() {
