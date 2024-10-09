@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+final class LikeViewModel  {
+    private let repository = try? RealmRepository<DownloadContent>()
+}
