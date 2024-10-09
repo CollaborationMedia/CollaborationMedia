@@ -11,7 +11,7 @@ extension UIImage {
     
     func resize(to size: CGSize) -> UIImage? {
            let options: [CFString: Any] = [
-               kCGImageSourceShouldCache: false,
+               kCGImageSourceShouldCacheImmediately: true,
                kCGImageSourceCreateThumbnailFromImageAlways: true,
                kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
                kCGImageSourceThumbnailMaxPixelSize: max(size.width, size.height),

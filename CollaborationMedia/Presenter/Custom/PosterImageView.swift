@@ -10,11 +10,12 @@ import SnapKit
 
 final class PosterImageView: UIImageView {
     
-    init(width: CGFloat, height: CGFloat, image: UIImage?) {
+    init(width: CGFloat, height: CGFloat, image: UIImage?, resize: Bool = false) {
         super.init(frame: CGRect())
         self.backgroundColor = .red
-        self.image = image
+        self.image = resize ? image?.resize(to: CGSize(width: width, height: height)) : image
         self.layer.cornerRadius = height >= 200 ? 10 : 5
+        image?.resize(to: CGSize(width: width, height: height))
         configLayout(height, width)
     }
     

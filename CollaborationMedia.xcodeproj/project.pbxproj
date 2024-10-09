@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */; };
-		BC85E8312CB5FFE700531B60 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E8302CB5FFE700531B60 /* TestViewController.swift */; };
 		BC85E8332CB6024000531B60 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E8322CB6024000531B60 /* ScreenSize.swift */; };
 		BC85E8352CB60E0C00531B60 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */; };
 		D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33972CB52DF000E1C5A7 /* AppDelegate.swift */; };
@@ -57,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
-		BC85E8302CB5FFE700531B60 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BC85E8322CB6024000531B60 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		D18B33942CB52DF000E1C5A7 /* CollaborationMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollaborationMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,7 +288,6 @@
 				D18B33F02CB54B9F00E1C5A7 /* Base */,
 				D18B33F12CB54BD900E1C5A7 /* TabBarController.swift */,
 				BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */,
-				BC85E8302CB5FFE700531B60 /* TestViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				D18B33EA2CB548F700E1C5A7 /* DetailViewModel.swift in Sources */,
 				D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */,
 				D18B33EE2CB5490F00E1C5A7 /* DetailViewController.swift in Sources */,
-				BC85E8312CB5FFE700531B60 /* TestViewController.swift in Sources */,
 				D18B339A2CB52DF000E1C5A7 /* SceneDelegate.swift in Sources */,
 				BC85E8332CB6024000531B60 /* ScreenSize.swift in Sources */,
 				BC85E8352CB60E0C00531B60 /* UIImage+Extension.swift in Sources */,
