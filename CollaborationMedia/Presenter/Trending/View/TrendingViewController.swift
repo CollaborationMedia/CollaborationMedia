@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController {
+class TrendingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

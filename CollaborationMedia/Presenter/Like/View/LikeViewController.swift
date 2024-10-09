@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LikeViewController: UIViewController {
+class LikeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
