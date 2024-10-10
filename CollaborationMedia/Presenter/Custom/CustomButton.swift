@@ -13,11 +13,14 @@ final class CustomButton: UIButton {
         
         var config = UIButton.Configuration.plain()
         config.image = image.rawValue
-        config.title = title
         config.imagePadding = 8
         config.baseForegroundColor = foregroundColor
         config.background.backgroundColor = backgroundColor
         config.background.cornerRadius = 8
+        
+        var attributedTitle = AttributedString(title)
+        attributedTitle.font = UIFont.systemFont(ofSize: 12)
+        config.attributedTitle = attributedTitle
         
         self.configuration = config
     }

@@ -16,6 +16,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+        
+        NetworkManager.request(GenreResponse.self, router: .genreList(contentType: .movie, query: GenreListQuery())) { result in
+            UserDefaultsManager.movieGenres = result.genres
+        } failure: { error in
+            print(error)
+        }
+        
+        NetworkManager.request(GenreResponse.self, router: .genreList(contentType: .tv, query: GenreListQuery())) { result in
+            UserDefaultsManager.tvGenres = result.genres
+        } failure: { error in
+            print(error)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
