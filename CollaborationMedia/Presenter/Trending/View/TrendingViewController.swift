@@ -8,22 +8,19 @@
 import UIKit
 
 class TrendingViewController: BaseViewController {
-
+    private let tvBarButtonItem = UIBarButtonItem(image: Image.sparklesTV.rawValue)
+    private let searchBarButtonItem = UIBarButtonItem(image: Image.magnifyingglass.rawValue)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setNavi()
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+private extension TrendingViewController {
+    func setNavi() {
+        navigationItem.rightBarButtonItems = [tvBarButtonItem, searchBarButtonItem]
+        navigationController?.navigationBar.tintColor = .white
     }
-    */
-
 }

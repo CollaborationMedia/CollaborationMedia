@@ -10,10 +10,9 @@ import SnapKit
 
 final class PosterImageView: UIImageView {
     
-    init(image: UIImage?, cornerRadius: CGFloat) {
+    init(cornerRadius: CGFloat) {
         super.init(frame: .zero)
         self.backgroundColor = .red
-        self.image = image
         self.layer.cornerRadius = cornerRadius
     }
     
