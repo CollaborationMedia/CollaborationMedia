@@ -10,7 +10,7 @@ import SnapKit
 
 final class PosterImageView: UIImageView {
     
-    init(width: CGFloat, height: CGFloat, image: UIImage?, resize: Bool = false) {
+    init(width: CGFloat, height: CGFloat, image: UIImage?) {
         super.init(frame: CGRect())
         self.backgroundColor = .red
         self.image = image
