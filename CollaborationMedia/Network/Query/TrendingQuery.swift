@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct TrendingQuery: Encodable {
+    var language = "ko-KR"
+}
