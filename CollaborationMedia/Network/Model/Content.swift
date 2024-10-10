@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Differentiator
 
 protocol PosterCellContent: Decodable {
     var id: Int { get }
@@ -62,6 +63,10 @@ struct Movie: Decodable, PosterCellContent, ListCellContent {
         case voteAverage = "vote_average"
 
     }
+    
+    var posterItem: PosterContent {
+        return PosterContent(id: id, mediaType: mediaType, title: title, posterPath: posterPath, backdropPath: backdropPath, genreIDs: genreIDs, voteAverage: voteAverage, overview: overview)
+    }
 }
 
 struct TVSeries: Decodable, PosterCellContent, ListCellContent {
@@ -85,4 +90,19 @@ struct TVSeries: Decodable, PosterCellContent, ListCellContent {
 
     }
     
+    var posterItem: PosterContent {
+        return PosterContent(id: id, mediaType: mediaType, title: title, posterPath: posterPath, backdropPath: backdropPath, genreIDs: genreIDs, voteAverage: voteAverage, overview: overview)
+    }
+}
+
+struct PosterContent: PosterCellContent, IdentifiableType, Hashable {
+    var identity = UUID().uuidString
+    var id: Int
+    var mediaType: String?
+    var title: String?
+    var posterPath: String?
+    var backdropPath: String?
+    var genreIDs: [Int]
+    var voteAverage: Double
+    var overview: String
 }

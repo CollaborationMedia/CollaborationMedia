@@ -11,9 +11,9 @@ struct GenreResponse: Decodable {
     let genres: [Genre]
 }
 
-struct Genre: Decodable {
-    let id : Int
-    let name : String
+struct Genre: Codable {
+    let id: Int
+    let name: String
     
     enum CodingKeys: String, CodingKey {
        case id

@@ -17,7 +17,8 @@ final class TabBarController: UITabBarController {
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .gray
         
-        let home = UINavigationController(rootViewController: TrendingViewController())
+        let trendingVM = TrendingViewModel()
+        let home = UINavigationController(rootViewController: TrendingViewController(viewModel: trendingVM))
         home.tabBarItem = UITabBarItem(title: "Home", image: Image.house.rawValue, tag: 0)
         
         let search = UINavigationController(rootViewController: SearchViewController())

@@ -7,21 +7,20 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class PosterCell: BaseCollectionViewCell {
-    private lazy var posterImageView = {
-        let view = PosterImageView(cornerRadius: 5)
-        self.contentView.addSubview(view)
-        return view
-    }()
+    private let posterImageView = PosterImageView(cornerRadius: 5)
     
     override func configureLayout() {
+        contentView.addSubview(posterImageView)
+        
         posterImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
     
     func configure(data: PosterCellContent) {
-        
+        posterImageView.kf.setImage(with: URL(string: data.posterURL))
     }
 }

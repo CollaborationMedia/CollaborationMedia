@@ -7,15 +7,16 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class MainPosterCell: BaseCollectionViewCell {
     private let mainPosterImageView = PosterImageView(cornerRadius: 10)
     
     private let genresLabel = {
         let view = UILabel()
-        view.font = .systemFont(ofSize: 12)
+        view.font = .systemFont(ofSize: 14)
         view.textColor = .white
-        view.text = "asdf" // dummy
+        view.text = "더미 장르 데이터" // dummy
         return view
     }()
     
@@ -45,11 +46,27 @@ final class MainPosterCell: BaseCollectionViewCell {
         
         genresLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(buttonStack.snp.top).offset(-8)
+            $0.bottom.equalTo(buttonStack.snp.top).offset(-16)
         }
     }
     
     func configure(data: PosterCellContent) {
-        mainPosterImageView.image = UIImage(systemName: "star")
+        mainPosterImageView.kf.setImage(with: URL(string: data.posterURL))
+        
+        if data.mediaType == "movie" {
+            let genres = UserDefaultsManager.movieGenres
+                .filter { data.genreIDs.contains($0.id) }
+                .map { $0.name }
+                .joined(separator: " ")
+
+            genresLabel.text = genres
+        } else if data.mediaType == "tv" {
+            let genres = UserDefaultsManager.tvGenres
+                .filter { data.genreIDs.contains($0.id) }
+                .map { $0.name }
+                .joined(separator: " ")
+
+            genresLabel.text = genres
+        }
     }
 }
