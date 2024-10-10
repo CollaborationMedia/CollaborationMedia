@@ -10,22 +10,14 @@ import SnapKit
 
 final class PosterImageView: UIImageView {
     
-    init(width: CGFloat, height: CGFloat, image: UIImage?) {
-        super.init(frame: CGRect())
+    init(image: UIImage?, cornerRadius: CGFloat) {
+        super.init(frame: .zero)
         self.backgroundColor = .red
         self.image = image
-        self.layer.cornerRadius = height >= 200 ? 10 : 5
-        configLayout(height, width)
+        self.layer.cornerRadius = cornerRadius
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configLayout(_ height: CGFloat, _ width: CGFloat) {
-        self.snp.makeConstraints { make in
-            make.height.equalTo(height)
-            make.width.equalTo(width)
-        }
     }
 }
