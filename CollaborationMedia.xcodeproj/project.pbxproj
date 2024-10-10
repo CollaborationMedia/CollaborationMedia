@@ -25,6 +25,10 @@
 		BC2C02E32CB6E15D00EE7B6D /* VedioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C02E22CB6E15D00EE7B6D /* VedioResponse.swift */; };
 		BC2C02E52CB6E27400EE7B6D /* VideosQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C02E42CB6E27400EE7B6D /* VideosQuery.swift */; };
 		BC2C02E72CB6E60200EE7B6D /* APITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C02E62CB6E60200EE7B6D /* APITestViewController.swift */; };
+		BC2C03062CB7C69500EE7B6D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BC2C03052CB7C69500EE7B6D /* RxCocoa */; };
+		BC2C03082CB7C69500EE7B6D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC2C03072CB7C69500EE7B6D /* RxSwift */; };
+		BC2C030B2CB7C6CD00EE7B6D /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = BC2C030A2CB7C6CD00EE7B6D /* Differentiator */; };
+		BC2C030D2CB7C6CD00EE7B6D /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = BC2C030C2CB7C6CD00EE7B6D /* RxDataSources */; };
 		BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */; };
 		BC85E8352CB60E0C00531B60 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85E8342CB60E0C00531B60 /* UIImage+Extension.swift */; };
 		D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33972CB52DF000E1C5A7 /* AppDelegate.swift */; };
@@ -131,8 +135,12 @@
 				D18B33C52CB540D200E1C5A7 /* Toast in Frameworks */,
 				D18B33C22CB540C300E1C5A7 /* IQKeyboardManagerSwift in Frameworks */,
 				D18B33BB2CB53E1C00E1C5A7 /* Kingfisher in Frameworks */,
+				BC2C030D2CB7C6CD00EE7B6D /* RxDataSources in Frameworks */,
+				BC2C03062CB7C69500EE7B6D /* RxCocoa in Frameworks */,
 				D18B33B82CB53E1100E1C5A7 /* RealmSwift in Frameworks */,
 				D18B33B22CB53DAB00E1C5A7 /* SnapKit in Frameworks */,
+				BC2C03082CB7C69500EE7B6D /* RxSwift in Frameworks */,
+				BC2C030B2CB7C6CD00EE7B6D /* Differentiator in Frameworks */,
 				D18B33B52CB53DDE00E1C5A7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +449,10 @@
 				D18B33BA2CB53E1C00E1C5A7 /* Kingfisher */,
 				D18B33C12CB540C300E1C5A7 /* IQKeyboardManagerSwift */,
 				D18B33C42CB540D200E1C5A7 /* Toast */,
+				BC2C03052CB7C69500EE7B6D /* RxCocoa */,
+				BC2C03072CB7C69500EE7B6D /* RxSwift */,
+				BC2C030A2CB7C6CD00EE7B6D /* Differentiator */,
+				BC2C030C2CB7C6CD00EE7B6D /* RxDataSources */,
 			);
 			productName = CollaborationMedia;
 			productReference = D18B33942CB52DF000E1C5A7 /* CollaborationMedia.app */;
@@ -478,6 +490,8 @@
 				D18B33BC2CB53EC200E1C5A7 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				D18B33C02CB540C300E1C5A7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				D18B33C32CB540D200E1C5A7 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				BC2C03042CB7C69500EE7B6D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BC2C03092CB7C6CD00EE7B6D /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = D18B33952CB52DF000E1C5A7 /* Products */;
 			projectDirPath = "";
@@ -776,6 +790,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BC2C03042CB7C69500EE7B6D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		BC2C03092CB7C6CD00EE7B6D /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		D18B33B02CB53DAB00E1C5A7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -835,6 +865,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC2C03052CB7C69500EE7B6D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC2C03042CB7C69500EE7B6D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BC2C03072CB7C69500EE7B6D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC2C03042CB7C69500EE7B6D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		BC2C030A2CB7C6CD00EE7B6D /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC2C03092CB7C6CD00EE7B6D /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		BC2C030C2CB7C6CD00EE7B6D /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC2C03092CB7C6CD00EE7B6D /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		D18B33B12CB53DAB00E1C5A7 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D18B33B02CB53DAB00E1C5A7 /* XCRemoteSwiftPackageReference "SnapKit" */;
