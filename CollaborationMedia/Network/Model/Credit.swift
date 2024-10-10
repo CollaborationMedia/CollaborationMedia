@@ -9,25 +9,18 @@ import Foundation
 
 
 // MARK: - Welcome
-struct Credits: Decodable {
+struct CreditResponse: Decodable {
     let cast, crew: [Cast]
     let id: Int
 }
 
 // MARK: - Cast
 struct Cast: Decodable {
-//    let gender, id: Int
     let name: String
-    let profilePath: String?
-    let character: String?
-//    let creditID: String
-//    let order: Int?
+    let knownForDepartment: String
     
     enum CodingKeys: String, CodingKey {
         case name
-//        case originalName = "original_name"
-        case profilePath = "profile_path"
-        case character
-//        case creditID = "credit_id"
+        case knownForDepartment = "known_for_department"
     }
 }
