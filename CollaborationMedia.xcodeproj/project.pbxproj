@@ -56,6 +56,8 @@
 		D18B34002CB565B900E1C5A7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B33FF2CB565B900E1C5A7 /* APIKey.swift */; };
 		D18B34022CB609DD00E1C5A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B34012CB609DD00E1C5A7 /* CustomButton.swift */; };
 		D18B34042CB6138E00E1C5A7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D18B34032CB6138E00E1C5A7 /* .swiftlint.yml */; };
+		D18B341C2CB7B8F600E1C5A7 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B341B2CB7B8F600E1C5A7 /* PosterCell.swift */; };
+		D18B341E2CB7B93700E1C5A7 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B341D2CB7B93700E1C5A7 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,6 +119,8 @@
 		D18B33FF2CB565B900E1C5A7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		D18B34012CB609DD00E1C5A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D18B34032CB6138E00E1C5A7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D18B341B2CB7B8F600E1C5A7 /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
+		D18B341D2CB7B93700E1C5A7 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +386,7 @@
 				D18B33F12CB54BD900E1C5A7 /* TabBarController.swift */,
 				BC85E82E2CB5FF7E00531B60 /* PosterImageView.swift */,
 				D18B34012CB609DD00E1C5A7 /* CustomButton.swift */,
+				D18B341B2CB7B8F600E1C5A7 /* PosterCell.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				D18B33F32CB54BE400E1C5A7 /* BaseViewController.swift */,
+				D18B341D2CB7B93700E1C5A7 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				BC2C02CB2CB6A41B00EE7B6D /* TrendingQuery.swift in Sources */,
 				D18B33FA2CB557A000E1C5A7 /* Image.swift in Sources */,
 				BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */,
+				D18B341C2CB7B8F600E1C5A7 /* PosterCell.swift in Sources */,
 				D18B33F22CB54BD900E1C5A7 /* TabBarController.swift in Sources */,
 				D18B33E02CB548CC00E1C5A7 /* SearchViewController.swift in Sources */,
 				D18B33D62CB5486800E1C5A7 /* TrendingViewController.swift in Sources */,
@@ -525,6 +532,7 @@
 				BC2C02B32CB67F0900EE7B6D /* Content.swift in Sources */,
 				D18B33DC2CB548AE00E1C5A7 /* SearchViewModel.swift in Sources */,
 				BC2C02DA2CB6D3CA00EE7B6D /* SimilarQuery.swift in Sources */,
+				D18B341E2CB7B93700E1C5A7 /* BaseCollectionViewCell.swift in Sources */,
 				D18B33E72CB548EC00E1C5A7 /* LikeViewModel.swift in Sources */,
 				D18B33EA2CB548F700E1C5A7 /* DetailViewModel.swift in Sources */,
 				D18B33982CB52DF000E1C5A7 /* AppDelegate.swift in Sources */,
