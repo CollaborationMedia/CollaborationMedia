@@ -13,8 +13,10 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .black
         configureHierachy()
         configureLayout()
+        bind()
     }
     
     func configureHierachy() { }
     func configureLayout() { }
+    func bind() {}
 }
