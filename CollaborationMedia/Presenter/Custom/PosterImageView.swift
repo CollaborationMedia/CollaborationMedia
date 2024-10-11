@@ -12,7 +12,7 @@ final class PosterImageView: UIImageView {
     
     init(cornerRadius: CGFloat) {
         super.init(frame: .zero)
-        self.backgroundColor = .red
+        self.backgroundColor = .clear
         self.layer.cornerRadius = cornerRadius
     }
     

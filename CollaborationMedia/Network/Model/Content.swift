@@ -67,6 +67,7 @@ struct Movie: Decodable, PosterCellContent, ListCellContent {
     var posterItem: PosterContent {
         return PosterContent(id: id, mediaType: mediaType, title: title, posterPath: posterPath, backdropPath: backdropPath, genreIDs: genreIDs, voteAverage: voteAverage, overview: overview)
     }
+
 }
 
 struct TVSeries: Decodable, PosterCellContent, ListCellContent {
@@ -93,6 +94,7 @@ struct TVSeries: Decodable, PosterCellContent, ListCellContent {
     var posterItem: PosterContent {
         return PosterContent(id: id, mediaType: mediaType, title: title, posterPath: posterPath, backdropPath: backdropPath, genreIDs: genreIDs, voteAverage: voteAverage, overview: overview)
     }
+    
 }
 
 struct PosterContent: PosterCellContent, IdentifiableType, Hashable {
@@ -105,4 +107,5 @@ struct PosterContent: PosterCellContent, IdentifiableType, Hashable {
     var genreIDs: [Int]
     var voteAverage: Double
     var overview: String
+    var credit: [String] = []
 }

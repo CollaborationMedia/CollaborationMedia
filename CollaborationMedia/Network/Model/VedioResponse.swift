@@ -17,7 +17,7 @@ struct Video: Decodable {
     var key: String
     
     var imagePath: String? {
-        return key
+        return APIConstant.videoBaseURL + key
     }
 }
 

@@ -68,6 +68,18 @@ class TrendingViewController: BaseViewController {
                     ])
                 }
         }
+        collectionView.rx.itemSelected
+            .map { [weak self] indexPath in
+                let section = self?.dataSource.sectionModels[indexPath.section]
+                let item = section?.items[indexPath.row]
+                return item
+            }
+            .bind(with: self, onNext: { owner, content in
+                guard let content else { return }
+                let vc = DetailViewController(viewModel: DetailViewModel(content: content))
+                owner.navigationController?.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
 }
