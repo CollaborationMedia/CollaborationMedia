@@ -10,6 +10,7 @@ import SnapKit
 import RxDataSources
 import RxSwift
 import RxCocoa
+import Toast
 
 class TrendingViewController: BaseViewController {
     private let tvBarButtonItem = UIBarButtonItem(image: Image.sparklesTV.rawValue)
@@ -160,6 +161,22 @@ private extension TrendingViewController {
     func configureDataSource() {
         let mainPosterCellRegistration = MainPosterCellRegistration { cell, indexPath, data in
             cell.configure(data: data)
+            cell.playButton.rx.tap
+                .bind(with: self) { owner, _ in
+                    NetworkManager.request(VideoResponse.self, router: .video(contentType: data.mediaType == "movie" ? .movie : .tv, id: data.id, query: VideoQuery())) { result in
+                        if let path = result.results.first?.imagePath,
+                        let url = URL(string: path) {
+                            let videoVC = VideoViewController(url: url)
+                            owner.present(videoVC, animated: true)
+                        } else {
+                            owner.view.makeToast("해당 작품의 동영상이 존재하지 않습니다.")
+                        }
+                    } failure: { error in
+                        print(error)
+                    }
+
+                }
+                .disposed(by: cell.disposeBag)
         }
         
         let trendingCellRegistration = TrendingPosterCellRegistration { cell, indexPath, data in

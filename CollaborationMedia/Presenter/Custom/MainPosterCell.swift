@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import RxSwift
 
 final class MainPosterCell: BaseCollectionViewCell {
     private let mainPosterImageView = PosterImageView(cornerRadius: 10)
@@ -20,7 +21,7 @@ final class MainPosterCell: BaseCollectionViewCell {
         return view
     }()
     
-    private let playButton = CustomButton(.play, "재생", .black, .white)
+    let playButton = CustomButton(.play, "재생", .black, .white)
     private let plusButton = CustomButton(.plus, "내가 찜한 리스트", .white, .black)
     
     private lazy var buttonStack = {
@@ -30,6 +31,13 @@ final class MainPosterCell: BaseCollectionViewCell {
         view.spacing = 8
         return view
     }()
+    
+    var disposeBag = DisposeBag()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
     
     override func configureLayout() {
         contentView.addSubview(mainPosterImageView)
