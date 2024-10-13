@@ -6,9 +6,11 @@
 //
 
 import UIKit
-
+import RxSwift
 
 final class DetailInfoCell: BaseCollectionViewCell {
+    
+    var disposeBag = DisposeBag()
     
     private let titleLabel = {
         let label = UILabel()
@@ -26,7 +28,7 @@ final class DetailInfoCell: BaseCollectionViewCell {
         return label
     }()
     
-    private let playButton = {
+    let playButton = {
         let button = CustomButton(
             Image.play,
             "재생",
@@ -129,6 +131,7 @@ final class DetailInfoCell: BaseCollectionViewCell {
         if let crew = item.credit.last, let base = creatorLabel.text {
             creatorLabel.text = base + crew
         }
+
     }
     
 }
