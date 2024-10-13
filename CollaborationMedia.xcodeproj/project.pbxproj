@@ -71,6 +71,7 @@
 		D18B34222CB7EDE400E1C5A7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B34212CB7EDE400E1C5A7 /* ViewModel.swift */; };
 		D18B34252CB82CBE00E1C5A7 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B34242CB82CBE00E1C5A7 /* UserDefault.swift */; };
 		D18B34272CB82D0200E1C5A7 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B34262CB82D0200E1C5A7 /* UserDefaultsManager.swift */; };
+		D18B347D2CBBDCD200E1C5A7 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B347C2CBBDCD200E1C5A7 /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +144,7 @@
 		D18B34212CB7EDE400E1C5A7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D18B34242CB82CBE00E1C5A7 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		D18B34262CB82D0200E1C5A7 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D18B347C2CBBDCD200E1C5A7 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		D18B33AD2CB5307D00E1C5A7 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D18B347B2CBBDCBE00E1C5A7 /* Video */,
 				D18B33F82CB5576000E1C5A7 /* Resource */,
 				D18B33EF2CB54B4200E1C5A7 /* Custom */,
 				D18B33E82CB548F000E1C5A7 /* Detail */,
@@ -491,6 +494,14 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		D18B347B2CBBDCBE00E1C5A7 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D18B347C2CBBDCD200E1C5A7 /* VideoViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -596,6 +607,7 @@
 				D18B33FA2CB557A000E1C5A7 /* Image.swift in Sources */,
 				BC85E82F2CB5FF7E00531B60 /* PosterImageView.swift in Sources */,
 				D18B341C2CB7B8F600E1C5A7 /* PosterCell.swift in Sources */,
+				D18B347D2CBBDCD200E1C5A7 /* VideoViewController.swift in Sources */,
 				D18B33F22CB54BD900E1C5A7 /* TabBarController.swift in Sources */,
 				D18B33E02CB548CC00E1C5A7 /* SearchViewController.swift in Sources */,
 				D18B33D62CB5486800E1C5A7 /* TrendingViewController.swift in Sources */,
