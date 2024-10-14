@@ -11,13 +11,6 @@ import RxCocoa
 import RxDataSources
 import Differentiator
 
-protocol InfoCellDelegate {
-    
-    func inputPlayButton()
-    
-}
-
-
 final class DetailViewController: BaseViewController {
 
     private var disposeBag = DisposeBag()
@@ -28,44 +21,10 @@ final class DetailViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: DetailCollectionView.createLayout()
     )
-    
-    private var headerRegistration: HeaderRegistration?
-    
-    private let detailInfoCellRegistration = CellRegistration<DetailInfoCell> { cell, indexPath, itemIdentifier in
-        cell.configCell(itemIdentifier)
-    }
-    
-    private let similarCellRegistration = CellRegistration<PosterCell> { cell, indexPath, itemIdentifier in
-        cell.configure(data: itemIdentifier)
-    }
-    
-    lazy var dataSource = RxCollectionViewSectionedReloadDataSource<DetailSectionModel> (
-        configureCell: { [weak self] dataSource, collectionView, indexPath, item in
-            
-            let section = DetailSection.allCases[indexPath.section]
-            
-            if section == .detail, let cellRegistration = self?.detailInfoCellRegistration {
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-            }
-            
-            if section == .similar, let cellRegistration = self?.similarCellRegistration {
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-            }
-            
-            return UICollectionViewCell()
-            
-        }, configureSupplementaryView: { [weak self] dataSource, collectionView, kind, indexPath in
-            
-            guard let headerRegistration = self?.headerRegistration else {
-                return UICollectionReusableView()
-            }
-            
-            return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
-           
-        }
-    )
-    
+
     private var viewModel: DetailViewModel
+    
+    fileprivate var dataSource: DataSource!
     
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
@@ -79,6 +38,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
+        configDataSource()
         bind()
     }
     
@@ -101,23 +61,66 @@ final class DetailViewController: BaseViewController {
         
         PublishSubject<DetailSectionModel>
             .combineLatest(sections)
-            .map { [weak self] in
-                self?.headerRegistration = self?.headerRegestration($0)
-                return $0
-            }
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        
     }
     
-    private func headerRegestration(_ sections: [DetailSectionModel]) -> HeaderRegistration {
+}
+
+private extension DetailViewController {
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<DetailSectionModel>
+    typealias HeaderRegistration = UICollectionView.SupplementaryRegistration<DetailHeaderView>
+    typealias CellRegistration<T: BaseCollectionViewCell> = UICollectionView.CellRegistration<T, PosterContent>
+    
+    
+    func configDataSource() {
+    
+        let headerRegistration = headerRegistration()
+        let detailInfoCellRegistration = detailInfoCellRegistration()
+        let similarCellRegistration = similarCellRegistration()
+        
+        dataSource = RxCollectionViewSectionedAnimatedDataSource<DetailSectionModel> (
+            configureCell: { [weak self] dataSource, collectionView, indexPath, item in
+              
+                let section = DetailSection.allCases[indexPath.section]
+                
+                if section == .detail {
+                    return collectionView.dequeueConfiguredReusableCell(
+                        using: detailInfoCellRegistration,
+                        for: indexPath,
+                        item: item
+                    )
+                }
+                
+                if section == .similar {
+                    return collectionView.dequeueConfiguredReusableCell(
+                        using: similarCellRegistration,
+                        for: indexPath,
+                        item: item
+                    )
+                }
+                
+                return UICollectionViewCell()
+                
+            }, configureSupplementaryView: { [weak self] dataSource, collectionView, kind, indexPath in
+
+                return collectionView.dequeueConfiguredReusableSupplementary(
+                    using: headerRegistration,
+                    for: indexPath
+                )
+                
+            }
+        )
+    }
+    
+    func headerRegistration() -> HeaderRegistration {
         HeaderRegistration(elementKind: UICollectionView.elementKindSectionHeader) {
-            (supplementaryView, string, indexPath) in
+            [weak self] (supplementaryView, string, indexPath) in
             let section = DetailSection.allCases[indexPath.section]
             switch section {
-            case .detail: 
-                let url = sections[indexPath.section].items.first?.backdropURL ?? ""
+            case .detail:
+                let url = self?.dataSource.sectionModels[indexPath.section].items.first?.backdropURL ?? ""
                 supplementaryView.configImage(url)
             case .similar:
                 supplementaryView.configTitle(section.header)
@@ -125,19 +128,34 @@ final class DetailViewController: BaseViewController {
         }
     }
 
-}
-
-extension DetailViewController {
-    
-    typealias HeaderRegistration = UICollectionView.SupplementaryRegistration<DetailHeaderView>
-    typealias CellRegistration<T: BaseCollectionViewCell> = UICollectionView.CellRegistration<T, PosterContent>
-
-}
-
-extension DetailViewController: InfoCellDelegate {
-    
-    func inputPlayButton() {
-        input.playButtonTapped.onNext(())
+    func detailInfoCellRegistration() -> CellRegistration<DetailInfoCell> {
+        CellRegistration<DetailInfoCell> { cell, indexPath, itemIdentifier in
+            cell.configCell(itemIdentifier)
+            cell.playButton.rx.tap
+                .bind(with: self, onNext: { owner, _ in
+                    let contentType = itemIdentifier.mediaType == ContentType.movie.rawValue ?  ContentType.movie : ContentType.tv
+                    
+                    NetworkManager.request(VideoResponse.self, router: .video(contentType: contentType, id: itemIdentifier.id, query: VideoQuery())) { result in
+                        if let path = result.results.first?.imagePath,
+                           let url = URL(string: path) {
+                            let videoVC = VideoViewController(url: url)
+                            owner.present(videoVC, animated: true)
+                        } else {
+                            owner.view.makeToast("해당 작품의 동영상이 존재하지 않습니다.")
+                        }
+                    } failure: { error in
+                        print(error)
+                    }
+                })
+                .disposed(by: cell.disposeBag)
+        }
+        
     }
     
+    func similarCellRegistration() -> CellRegistration<PosterCell> {
+        CellRegistration<PosterCell> { cell, indexPath, itemIdentifier in
+            cell.configure(data: itemIdentifier)
+        }
+    }
+
 }
