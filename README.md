@@ -31,7 +31,7 @@
 
 | 코드 컨벤션
 - SwiftLint
-- 
+- 커스텀 Rule 설정
 
 | 커밋 컨벤션
 - Karma 컨벤션 중 브랜치 전략에 필요한 컨벤션 
@@ -50,6 +50,7 @@
 | [Conflict] | Git Conflict 수정 커밋 |
 
 | PR 템플릿
+
 
 
 <br>
