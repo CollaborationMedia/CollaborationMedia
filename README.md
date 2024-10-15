@@ -1,4 +1,22 @@
-## 프로젝트 정보
+## MediaBox 
+
+| 스크린샷
+
+| 인기 컨텐츠 조회 | 상세 | 티저영샹 | 
+| --- | --- | --- |
+| ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 33 35](https://github.com/user-attachments/assets/ddbcb7cd-e659-46f2-92bd-c71ca2c74c00) | ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 35 27](https://github.com/user-attachments/assets/a3cdb9f7-395d-4b3f-9cbe-e0b04024a3e0) | ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 36 05](https://github.com/user-attachments/assets/06ba6a6b-42bf-46e2-8d5c-729ae669ee04) |
+
+
+
+
+
+| 프로젝트 소개
+
+- 지금 인기 있는 영화나 TV시리즈를 검색하고 상세정보를 조회할 수 있는 서비스
+
+| 프로젝트 정보
+- 개발기간: 2024.10.08 ~ 2024.10.14일
+- 개발인원: 클라이언트 2명
 
 <br>
 
@@ -22,6 +40,9 @@
 <br>
 
 ## 개발환경
+
+| 최소버전
+- iOS 15.0이상 
 
 | 버전관리
 - Github (git)
