@@ -50,8 +50,9 @@
 | [Conflict] | Git Conflict 수정 커밋 |
 
 | PR 템플릿
-
-
+<div align="centger">
+ <img width="688" alt="스크린샷 2024-10-15 오후 4 13 50" src="https://github.com/user-attachments/assets/a0219f11-3ae5-46bd-acd5-93727eb6d696">
+</div>
 
 <br>
 
