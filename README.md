@@ -50,8 +50,8 @@
 | [Conflict] | Git Conflict 수정 커밋 |
 
 | PR 템플릿
-<div align="centger">
- <img width="688" alt="스크린샷 2024-10-15 오후 4 13 50" src="https://github.com/user-attachments/assets/a0219f11-3ae5-46bd-acd5-93727eb6d696">
+<div align="center">
+ <img width="823" alt="스크린샷 2024-10-15 오후 4 14 08" src="https://github.com/user-attachments/assets/6ea1c200-47ad-4da5-85b2-f5fdb22c8a4a">   
 </div>
 
 <br>
@@ -64,7 +64,28 @@
 <br>
 
 ## 역할분담
- 
+
+| 조규연
+- 페이지: 인기 영화 / TV시리즈 조회 화면, 티저 영상 WebView
+- 공통 컴포넌트: CustomButton, PosterContent, PosterCell
+
+| 유철원
+- 페이지: 상세화면
+- 공통 컴포넌트: PosterImageView
+
+
+ ## 구현사항
+
+| 네트워킹
+ - NetworkManager
+ - Router
+ - TargetType
+
+| protocol 기반의 UI용 모델 인터페이스 구현  
+
+| RxdataSource + CompositaionlLayout
+- AnitableSectionModel 
+
 
 <br>
 
@@ -72,9 +93,17 @@
 
 | pbxproj Conflict 
 
-
+| RxDatasSource Configure
 
 <br>
 
 ## 회고
+
+| 성취점
+- 
+
+| 개선사항
+- 
+
+
 
