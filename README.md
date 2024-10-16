@@ -147,7 +147,7 @@
 
 <br>
 
-**원인추론**
+**원인**
 
   1. gitignore 설정한 파일을 프로젝트에 생성한 후 remote에 push
      - remote의 pbxproj 파일에는 해당 파일의 identifier와 경로가 추가됨
