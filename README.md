@@ -67,7 +67,7 @@
 <br>
 
 > ### 커밋 컨벤션
-- Karma 컨벤션 중 브랜치 전략에 필요한 컨벤션 
+- Karma 컨벤션 채택
 - Feature 브랜치 내에서는 작동가능한 코드를 기준으로 커밋 단위 설정 
 
 | Tag Name | Description |
