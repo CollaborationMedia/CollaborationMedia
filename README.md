@@ -136,7 +136,24 @@
 
 <br>
 
-> ### pbxproj Conflict 
+> ### pbxproj Conflict
+
+1. A 개발자가 APIKey파일을 .gitignore 설정 후, remote에 push
+   
+2. remote의 변경을 알게 된 B 개발자가 remote를 pull하면 아래와 같이 프로젝트가 빌드되지 않음 
+<img width="270" alt="스크린샷 2024-10-15 오후 5 54 10" src="https://github.com/user-attachments/assets/229bfbd5-8f8c-4172-899d-f5167fea4578">
+
+4. B 개발자의 pbxproj 파일은 remote와 동일한 버전이지만 APIKey 파일은 git에서 관리되지 않아 B개발자의 프로젝트에서는 APIKey파일의 참조만 갖고 있는 상태인 것이 원인
+
+5. 4.를 알게된 B 개발자는 사전에 협의한 내용과 동일한 APIKey 파일을 동일한 경로에 추가한 후 빌드하여 개별 작업 진행
+
+6. A 개발자는 3.의 사실을 모르고 새로운 파일을 프로젝트에 추가한 뒤 다시 remote에 push
+
+7. remote가 변경된 것을 확인한 B 개발자가 pull을 수행하면 아래와 같이 pbxproj 파일에서 conflict가 발생
+
+테스트 
+
+<img width="1148" alt="스크린샷 2024-10-15 오후 6 45 08" src="https://github.com/user-attachments/assets/a5ac32da-f8ed-47f2-99d2-2d79318868aa">
 
 <br>
 
