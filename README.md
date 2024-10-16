@@ -135,36 +135,22 @@
 
 > ### pbxproj Conflict
 
-- 문제 상황
-  1. 팀원이 프로젝트를 clone 했을 때 .gitignore 설정한 파일이 xcode의 navigator 영역에 붉은색으로 표시되어 빌드가 되지 않음
-  2. 최신 상태의 remote를 pull 받았을 때 pbxproj 파일에서 conflict 발생
-- 원인 추론
-  1. gitignore 설정한 파일을 생성한 후 remote에 push
+
+1) 문제상황
+  - gitignore 설정한 파일을 프로젝트에 생성한 상태로 push. pbxproj에 해당 파일의 경로가 남아 pull 받은 쪽에서 프로젝트가 파일의 참조만 갖는 상태로 빌드되지 않음.
+ <img width="270" alt="스크린샷 2024-10-15 오후 5 54 10" src="https://github.com/user-attachments/assets/229bfbd5-8f8c-4172-899d-f5167fea4578">
+  
+  - pull받은 쪽의 로컬에서 문제가 되는 파일을 동일경로에 생성한 후 빌드에 성공하더라도 리모트에 추가 변경사항 발생시 pbxproj 파일에서 반복적으로 conflict 발생.
+ <img width="1080" alt="스크린샷 2024-10-16 오후 3 53 30" src="https://github.com/user-attachments/assets/e7902560-d2f8-45e6-9582-3a368c5ff788">
+ 
+2) 원인추론
+  1. gitignore 설정한 파일을 프로젝트에 생성한 후 remote에 push
      - remote의 pbxproj 파일에는 해당 파일의 identifier와 경로가 추가됨
      - git에서는 관리되지 않으므로 해당 파일은 업로드 되지 않음
-  2. pbxproj 파일을 열어보니 해당 파일의 Hash값이 다름
-- 해결과정
-  1. xcode의 navigator 영역에서 해당 파일을 지운 후 동일한 이름의 새로운 파일 생성해 빌드가 되지 않는 문제 해결
-   - 문제가 해결된 줄 알았는데 업데이트 된 리모트를 pull 받았을 때 pbxproj 파일에서 conflict 발생
-  2. 
+  2. 첫 번째 문제를 해결하기 위해 로컬에서 생성한 파일은 pbxproj의 파일과 경로가 동일하더라도 다른 를 갖고 있기 때문에 pbx파일
   
-  
-1. A 개발자가 APIKey파일을 .gitignore 설정 후, remote에 push
-   
-2. remote의 변경을 알게 된 B 개발자가 remote를 pull하면 아래와 같이 프로젝트가 빌드되지 않음 
-<img width="270" alt="스크린샷 2024-10-15 오후 5 54 10" src="https://github.com/user-attachments/assets/229bfbd5-8f8c-4172-899d-f5167fea4578">
-
-4. B 개발자의 pbxproj 파일은 remote와 동일한 버전이지만 APIKey 파일은 git에서 관리되지 않아 B개발자의 프로젝트에서는 APIKey파일의 참조만 갖고 있는 상태인 것이 원인
-
-5. 4.를 알게된 B 개발자는 사전에 협의한 내용과 동일한 APIKey 파일을 동일한 경로에 추가한 후 빌드하여 개별 작업 진행
-
-6. A 개발자는 3.의 사실을 모르고 새로운 파일을 프로젝트에 추가한 뒤 다시 remote에 push
-
-7. remote가 변경된 것을 확인한 B 개발자가 pull을 수행하면 아래와 같이 pbxproj 파일에서 conflict가 발생
-
-테스트 
-
-<img width="1148" alt="스크린샷 2024-10-15 오후 6 45 08" src="https://github.com/user-attachments/assets/a5ac32da-f8ed-47f2-99d2-2d79318868aa">
+3) 해결방법
+  1. 최초 프로젝트 설정 시 gitignore 파일만 생성하여 팀에 공유한 후 각자 로컬에서 gitignore처리된 파일을 협의된 경로에 동일한 내용으로 생성
 
 <br>
 
