@@ -4,7 +4,7 @@
 
 > ### 스크린샷
 
-| 인기 컨텐츠 조회 | 상세 | 티저영샹 | 
+| 인기 컨텐츠 조회 | 상세 | 티저영상 | 
 | --- | --- | --- |
 | ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 33 35](https://github.com/user-attachments/assets/ddbcb7cd-e659-46f2-92bd-c71ca2c74c00) | ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 35 27](https://github.com/user-attachments/assets/a3cdb9f7-395d-4b3f-9cbe-e0b04024a3e0) | ![Simulator Screenshot - iPhone 15 - 2024-10-15 at 17 36 05](https://github.com/user-attachments/assets/06ba6a6b-42bf-46e2-8d5c-729ae669ee04) |
 
