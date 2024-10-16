@@ -135,6 +135,7 @@
 
 > ### pbxproj Conflict
 
+
 1) 문제상황
   - gitignore 설정한 파일을 프로젝트에 생성한 상태로 push. pbxproj에 해당 파일의 경로가 남아 pull 받은 쪽에서 프로젝트가 파일의 참조만 갖는 상태로 빌드되지 않음.
  <img width="270" alt="스크린샷 2024-10-15 오후 5 54 10" src="https://github.com/user-attachments/assets/229bfbd5-8f8c-4172-899d-f5167fea4578">
@@ -146,14 +147,10 @@
   1. gitignore 설정한 파일을 프로젝트에 생성한 후 remote에 push
      - remote의 pbxproj 파일에는 해당 파일의 identifier와 경로가 추가됨
      - git에서는 관리되지 않으므로 해당 파일은 업로드 되지 않음
-  2. 첫 번째 문제를 해결하기 위해 로컬에서 생성한 파일은 pbxproj의 파일과 경로가 동일하더라도 다른 identifire를 갖고 있기 때문에 pbx파일
+  2. 첫 번째 문제를 해결하기 위해 로컬에서 생성한 파일은 pbxproj의 파일과 경로가 동일하더라도 다른 를 갖고 있기 때문에 pbx파일
   
 3) 해결방법
   1. 최초 프로젝트 설정 시 gitignore 파일만 생성하여 팀에 공유한 후 각자 로컬에서 gitignore처리된 파일을 협의된 경로에 동일한 내용으로 생성
-
-
-
-<img width="1148" alt="스크린샷 2024-10-15 오후 6 45 08" src="https://github.com/user-attachments/assets/a5ac32da-f8ed-47f2-99d2-2d79318868aa">
 
 <br>
 
