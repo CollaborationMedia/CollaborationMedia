@@ -100,8 +100,6 @@
 
 ## 역할분담
 
-<br>
-
 > ### 조규연
 - 페이지: 인기 영화 / TV시리즈 조회 화면, 티저 영상 WebView
 - 공통 컴포넌트: CustomButton, PosterContent, PosterCell
@@ -117,18 +115,17 @@
  ## 구현사항
 
 > ### 네트워킹
- - NetworkManager
- - Router
- - TargetType
+ - NetworkManager, Router Pattern, TargetType 을 이용해 여러 API 호출 함수들을 모듈화
 
 <br>
 
 > ### protocol 기반의 UI용 모델 인터페이스 구현  
+<img width="311" alt="스크린샷 2024-10-16 오후 3 01 07" src="https://github.com/user-attachments/assets/c75f9c15-474e-4cc4-ba32-e242783c8a46">
 
 <br>
 
-> ### RxdataSource + CompositaionlLayout
-- AnitableSectionModel
+> ### RxdataSource + CompositionalLayout
+- AnimatableSectionModel: 데이터 개수 변경에 따른 자연스러운 애니메이션 동작
 
 <br>
 
@@ -140,14 +137,14 @@
 
 <br>
 
-> ### RxDatasSource Configure
+> ### RxDataSource Configure
 
 <br>
 
 ## 회고
 
 > ### 성취점
-- 공통된 UI컴포넌트와 View용 모델의 인터페이스를 협의를 통해 설계한 후 공유하여 사용한 점
+- 공통된 UI 컴포넌트와 View용 모델의 인터페이스를 협의를 통해 설계한 점
 - 코드 컨벤션, 브랜치 전략, Git 컨벤션, PR 템플릿에 기반한 상호 코드 Review를 통해 일관된 Rule기반의 프로젝트 관리를 수행한 점 
 
 <br>
