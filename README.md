@@ -135,6 +135,20 @@
 
 > ### pbxproj Conflict
 
+- 문제 상황
+  1. 팀원이 프로젝트를 clone 했을 때 .gitignore 설정한 파일이 xcode의 navigator 영역에 붉은색으로 표시되어 빌드가 되지 않음
+  2. 최신 상태의 remote를 pull 받았을 때 pbxproj 파일에서 conflict 발생
+- 원인 추론
+  1. gitignore 설정한 파일을 생성한 후 remote에 push
+     - remote의 pbxproj 파일에는 해당 파일의 identifier와 경로가 추가됨
+     - git에서는 관리되지 않으므로 해당 파일은 업로드 되지 않음
+  2. pbxproj 파일을 열어보니 해당 파일의 Hash값이 다름
+- 해결과정
+  1. xcode의 navigator 영역에서 해당 파일을 지운 후 동일한 이름의 새로운 파일 생성해 빌드가 되지 않는 문제 해결
+   - 문제가 해결된 줄 알았는데 업데이트 된 리모트를 pull 받았을 때 pbxproj 파일에서 conflict 발생
+  2. 
+  
+  
 1. A 개발자가 APIKey파일을 .gitignore 설정 후, remote에 push
    
 2. remote의 변경을 알게 된 B 개발자가 remote를 pull하면 아래와 같이 프로젝트가 빌드되지 않음 
